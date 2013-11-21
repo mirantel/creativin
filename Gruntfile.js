@@ -70,6 +70,10 @@ grunt.initConfig({
 			files: 'src/*html',
 			tasks: ['includereplace', 'clean:html'],
 		},
+		img: {
+			files: 'src/img/**',
+			tasks: ['copy:img'],
+		}
 	},
 
 });

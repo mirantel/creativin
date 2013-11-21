@@ -1,0 +1,106 @@
+
+html,body {
+	height: 100%;
+}
+
+ul,ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// Colors
+
+$blue_dark = #08233e;
+$yellow = #FABD02;
+
+
+// Common styles
+.slide {
+	height: 100%;
+	width: 100%;
+	background: $yellow;
+}
+
+.shadow, .right-shadow {
+	position: relative;
+	&::before{
+		position: absolute;
+		top: 35%;
+		left:35%;
+		width: 100%;
+		height: 100%;
+		border-radius: 0 0 0 75%;
+		background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
+		content: "";
+		transform: rotate(-45deg);
+	}
+}
+
+.right-shadow {
+	text-align: center;
+	& > * {
+		position: relative;
+		display: block;
+		height: 100%;
+		border-radius: 50%;
+	}
+}
+
+.lang {
+	font-size: 0;
+	li {
+		display: inline-block;
+		margin: 0 5px;
+	}
+
+	a {
+		display: block;
+		height: 30px;
+		width: 30px;
+		line-height: 30px;
+		color: #fff;
+		font-size: 11px;
+		text-transform: uppercase;
+		text-decoration: none;
+		background: #2C5379;
+		transition: background 0.2s ease-out;
+		&:hover, &:active{
+			color: #f0b500;
+			background: #fff;
+		}
+	}
+}
+
+.btn-slide {
+	height: 48px;
+	width: 48px;
+	cursor: pointer;
+	margin: 0 auto;
+	transition: background 0.2s ease-out;
+
+	&_blue span {
+		background: #0F2D4C;
+		&:hover {
+			background: #214b73;
+		}
+	}
+
+	&_white span{
+		background: #fff;
+	}
+
+	&_yellow span{
+		
+	}
+}
+
+.icon-arr-bottom{
+	width: 37px;
+	height: 26px;
+	background: url(../img/icon-arr-bottom.png);
+	display: block;
+	top: 21px;
+	left: 13px;
+	position: absolute;
+}
