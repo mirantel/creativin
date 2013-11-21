@@ -18,7 +18,7 @@ grunt.initConfig({
 			 browsers: ['last 3 version', 'ie >= 8']
 		},
 		global: {
-			src: 'production/css/styles.css'
+			src: 'production/css/screen.css'
 		},
 	},
 

@@ -1,0 +1,30 @@
+// Colors
+
+$blue_dark = #08233e;
+$yellow = #FABD02;
+
+// Rounds
+
+.round{
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	&::before{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
+		transform: rotate(-45deg);
+		top: 35%;
+		left:35%;
+	}
+	span{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: 50%;
+	}
+}
