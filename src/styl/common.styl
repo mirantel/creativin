@@ -77,12 +77,18 @@ $yellow = #FABD02;
 .btn-slide {
 	height: 48px;
 	width: 48px;
-	cursor: pointer;
 	margin: 0 auto;
 
-	&_blue span {
-		background: #0F2D4C;
+	&__in{
+		display: block;
+		height: 100%;
+		cursor: pointer;
+		overflow: hidden;
 		transition: background 0.2s ease-out;
+	}
+
+	&_blue .btn-slide__in {
+		background: #0F2D4C;
 		&:hover {
 			background: #214b73;
 		}
@@ -100,7 +106,7 @@ $yellow = #FABD02;
 .icon-arr-bottom{
 	width: 37px;
 	height: 26px;
-	background: url(../img/icon-arr-bottom.png);
+	background-image: embedurl("../date-img/icon-arr-bottom.png");
 	top: 21px;
 	left: 13px;
 	position: absolute;
@@ -110,7 +116,7 @@ $yellow = #FABD02;
 	background: $blue_dark;
 	height: 68px;
 	_clearfix();
-	
+
 	.inner{
 		max-width: 1080px;
 		margin: 0 auto;
@@ -152,7 +158,7 @@ $yellow = #FABD02;
 			background: #FABD02;
 		}
 		.icon-portfolio{
-			background: url(../img/icon-portfolio_h.png);
+			background-image: embedurl("../date-img/icon-portfolio_h.png");
 		}
 		.nav__text{
 			z-index: 2;
@@ -186,7 +192,7 @@ $yellow = #FABD02;
 .nav__text{
 	position: absolute;
 	display: block;
-	background: url(../img/nav-bottom.png);
+	background: embedurl("../date-img/nav-bottom.png");
 	height: 27px;
 	width: 120px;
 	text-align: center;
@@ -203,28 +209,28 @@ $yellow = #FABD02;
 .icon-portfolio{
 	width: 36px;
 	height: 35px;
-	background: url(../img/icon-portfolio.png);
+	background: embedurl("../date-img/icon-portfolio.png");
 	top: 13px;
 	left: 12px;
 }
 .icon-services{
 	width: 35px;
 	height: 34px;
-	background: url(../img/icon-services.png);
+	background: embedurl("../date-img/icon-services.png");
 	top: 14px;
 	left: 12px;
 }
 .icon-about-us{
 	width: 37px;
 	height: 26px;
-	background: url(../img/icon-about-us.png);
+	background: embedurl("../date-img/icon-about-us.png");
 	top: 12px;
 	left: 10px;
 }
 .icon-contacts{
 	width: 32px;
 	height: 34px;
-	background: url(../img/icon-contacts.png);
+	background: embedurl("../date-img/icon-contacts.png");
 	top: 12px;
 	left: 15px;
 }

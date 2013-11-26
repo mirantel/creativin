@@ -5,6 +5,7 @@ grunt.initConfig({
 	stylus: {
 		options: {
 			compress: false,
+			urlfunc: 'embedurl',
 		},
 		global: {
 			files: {
