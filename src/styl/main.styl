@@ -1,13 +1,31 @@
 .slide_main{
 	background: $blue_dark;
 	text-align: center;
-
-	.inner{
-		width: 573px;
+	padding: 1px 0;
+	.wrapper{
+		display: table;
+		height: 100%;
+		width: 593px;
+		padding: 0 10px;
 		margin: 0 auto;
+	}
+	.inner{
+		vertical-align: middle;
+		display: table-cell;
+	}
+
+	.btn-slide{
+		bottom: 13%;
+		position: relative;
 	}
 }
 
+.icon-device{
+	background: url("../img/icon-device.png") 50% 50% no-repeat;
+	width: 46px;
+	height: 45px;
+	display: inline-block;
+}
 
 .lines-block{
 	background: url("../img/bg-lines.png") 0 50% repeat-x;
@@ -17,4 +35,21 @@
 		width: 95px;
 		margin: 0 auto;
 	}
+
+	.icon-device{
+		padding: 0 15px;
+		background-color: $blue_dark;
+	}
+}
+
+.big-logo{
+	margin: 55px 0 20px;
+}
+
+.slogan{
+	color: #274d71;
+	font-size: 34px;
+	text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+	font-weight: 300;
+	margin-top: 25px;
 }

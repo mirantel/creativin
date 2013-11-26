@@ -83,6 +83,7 @@ grunt.initConfig({
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-include-replace');
+//	grunt.loadNpmTasks('grunt-spriter');
 	grunt.loadNpmTasks('grunt-csso');
 
 	grunt.registerTask( 'default', ['watch']);
