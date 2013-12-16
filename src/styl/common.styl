@@ -67,7 +67,7 @@ $yellow = #FABD02;
 		text-decoration: none;
 		background: #2C5379;
 		transition: background 0.2s ease-out;
-		&:hover, &:active{
+		&:hover, &:active, .lang .is-active &{
 			color: #f0b500;
 			background: #fff;
 		}
@@ -94,12 +94,18 @@ $yellow = #FABD02;
 		}
 	}
 
-	&_white span{
+	&_white .btn-slide__in{
 		background: #fff;
+		&:hover {
+			background: #de8301;
+		}
 	}
 
-	&_yellow span{
-		
+	&_yellow .btn-slide__in{
+		background: #eba000;
+		&:hover {
+			background: #de8301;
+		}
 	}
 }
 
@@ -136,6 +142,14 @@ $yellow = #FABD02;
 		}
 	}
 }
+.header_in-top{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+}
+
 .logo{
 	float: left;
 	background: url(../img/logo.png);
@@ -150,20 +164,26 @@ $yellow = #FABD02;
 	width: 410px;
 	margin: 0 auto;
 	padding-top: 7px;
-	a{
-		display: block;
-	}
 	a:hover, .is-active{
 		.nav__icon{
 			background: #FABD02;
-		}
-		.icon-portfolio{
-			background-image: embedurl("../date-img/icon-portfolio_h.png");
 		}
 		.nav__text{
 			z-index: 2;
 			opacity: 1;
 			bottom: -36px;
+		}
+		.icon-portfolio{
+			background: embedurl("../date-img/icon-portfolio_h.png");
+		}
+		.icon-services{
+			background: embedurl("../date-img/icon-services_h.png");
+		}
+		.icon-about-us{
+			background: embedurl("../date-img/icon-about-us_h.png");
+		}
+		.icon-contacts{
+			background: embedurl("../date-img/icon-contacts_h.png");
 		}
 	}
 	a{
@@ -175,9 +195,6 @@ $yellow = #FABD02;
 	display: inline-block;
 	font-size: 0;
 	margin: 0 20px;
-	border-radius:50%;
-	width: 48px;
-	height: 48px;
 }
 .nav__icon{
 	width: 48px;
@@ -185,13 +202,13 @@ $yellow = #FABD02;
 	background: #2C5379;
 	transition: background 0.5s ease-out;
 	z-index: 3;
+	overflow: hidden;
 	i{
 		position: absolute;
 	}
 }
 .nav__text{
 	position: absolute;
-	display: block;
 	background: embedurl("../date-img/nav-bottom.png");
 	height: 27px;
 	width: 120px;
