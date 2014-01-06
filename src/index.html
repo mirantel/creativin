@@ -7,38 +7,36 @@
 	<meta name="viewport" content="width=device-width"/>
 	<link rel="stylesheet" media="screen" href="css/normalize.css" >
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="js/jquery.js"></script>
 	<script src="js/jquery.bxslider.min.js"></script>
-
 	<script src="js/common.js"></script>
 
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="js/jquery.scrollorama.js"></script>
 	<script src="js/jquery.easing.1.3.js"></script>
 	<script src="js/jquery.scrolldeck.js"></script>
-	
+-->
 </head>
 <body>
-
-<!-- BEGIN main -->
+<div class="out">
+<div class="out__wrap">
+<div class="out__in">
+	<div class="scrolled">0</div>
+	<ul>
+		<li class="point_0"></li>
+		<li class="point_1"></li>
+		<li class="point_2"></li>
+		<li class="point_3"></li>
+		<li class="point_4"></li>
+	</ul>
 @@include('_main.html')
-<!-- END main -->
-
-<!-- BEGIN portfolio -->
+@@include('_header.html')
 @@include('_portfolio.html')
-<!-- END portfolio -->
-
-<!-- BEGIN services -->
 @@include('_services.html')
-<!-- END services -->
-
-<!-- BEGIN about-us -->
 @@include('_about-us.html')
-<!-- END about-us -->
-
-<!-- BEGIN contacts -->
 @@include('_contacts.html')
-<!-- END contacts -->
-
+</div>
+</div>
+</div>
 </body>
 </html>

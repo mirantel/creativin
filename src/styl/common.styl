@@ -9,21 +9,77 @@ ul,ol {
 	list-style: none;
 }
 
-// Colors
+.scrolled{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  min-width: 10px;
+  background: #000;
+  z-index: 200;
+  font-size: 16px;
+  color: #fff;
+}
+.point{
+	&_0,
+	&_1,
+	&_2,
+	&_3,
+	&_4,
+	&_5{
+		background: #000;
+		position: fixed;
+		z-index: 200;
+		top: 0;
+		padding: 5px;
+		right: 0;
+		color: #fff;
+		font-size: 16px;
+		line-height: 30px;
+		min-width: 10px;
+	}
 
-$blue_dark = #08233e;
-$yellow = #FABD02;
-//274d71
-//214b73
-
+	&_0{
+		top: 0;
+	}
+	&_1{
+		top: 30px;
+	}
+	&_2{
+		top: 60px;
+	}
+	&_3{
+		top: 90px;
+	}
+	&_4{
+		top: 120px;
+	}
+	&_5{
+		top: 150px;
+	}
+	&_6{
+		top: 180px;
+	}
+}
+.out{
+	&__in{
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		
+	}
+}
 
 // Common styles
-.slide {
-	height: 100%;
-	width: 100%;
-	background: $yellow;
-	min-height: 600px;
-	box-sizing: border-box;
+.layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	min-width 1160px;
 }
 
 .shadow, .with-shadow {
@@ -32,7 +88,7 @@ $yellow = #FABD02;
 	&::before{
 		position: absolute;
 		top: 35%;
-		left:35%;
+		left: 35%;
 		width: 100%;
 		height: 100%;
 		border-radius: 0 0 0 75%;
@@ -121,6 +177,11 @@ $yellow = #FABD02;
 .header{
 	background: $blue_dark;
 	height: 68px;
+	position: fixed;
+	z-index: 55;
+	top: 0;
+	left: 0;
+	right: 0;
 	_clearfix();
 
 	.inner{
@@ -141,13 +202,6 @@ $yellow = #FABD02;
 			vertical-align: middle;
 		}
 	}
-}
-.header_in-top{
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 5;
 }
 
 .logo{

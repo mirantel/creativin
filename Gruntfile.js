@@ -6,6 +6,10 @@ grunt.initConfig({
 		options: {
 			compress: false,
 			urlfunc: 'embedurl',
+			paths: ['src/styl/'],
+				import: [
+					'mixins'
+				],
 		},
 		global: {
 			files: {

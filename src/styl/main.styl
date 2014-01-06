@@ -1,8 +1,9 @@
-.slide_main{
+.layer_main{
 	background: $blue_dark;
 	text-align: center;
-	padding: 1px 0;
-	.wrapper{
+	z-index: 60;
+	transition: height 0.2s ease-out;
+	.wrap{
 		display: table;
 		height: 100%;
 		width: 593px;
@@ -15,7 +16,7 @@
 	}
 
 	.btn-slide{
-		bottom: 13%;
+		bottom: 100px;
 		position: relative;
 	}
 }
