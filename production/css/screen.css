@@ -283,7 +283,9 @@ ol {
   list-style: none;
 }
 
-.scrolled {
+.step,
+.scrolled,
+.winheight {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -295,50 +297,103 @@ ol {
   color: #fff;
 }
 
-.point_0,
-.point_1,
-.point_2,
-.point_3,
-.point_4,
-.point_5 {
+.step {
+  bottom: 30px;
+}
+
+.winheight {
+  left: 0;
+  right: auto;
+}
+
+.spoint_0,
+.fpoint_0,
+.height_0,
+.spoint_1,
+.fpoint_1,
+.height_1,
+.spoint_2,
+.fpoint_2,
+.height_2,
+.spoint_3,
+.fpoint_3,
+.height_3,
+.spoint_4,
+.fpoint_4,
+.height_4,
+.spoint_5,
+.fpoint_5,
+.height_5 {
   background: #000;
   position: fixed;
   z-index: 200;
   top: 0;
   padding: 5px;
-  right: 0;
+  right: 50px;
   color: #fff;
   font-size: 16px;
   line-height: 30px;
   min-width: 10px;
 }
 
-.point_0 {
+.spoint_0,
+.fpoint_0,
+.height_0 {
   top: 0;
 }
 
-.point_1 {
+.spoint_1,
+.fpoint_1,
+.height_1 {
   top: 30px;
 }
 
-.point_2 {
+.spoint_2,
+.fpoint_2,
+.height_2 {
   top: 60px;
 }
 
-.point_3 {
+.spoint_3,
+.fpoint_3,
+.height_3 {
   top: 90px;
 }
 
-.point_4 {
+.spoint_4,
+.fpoint_4,
+.height_4 {
   top: 120px;
 }
 
-.point_5 {
+.spoint_5,
+.fpoint_5,
+.height_5 {
   top: 150px;
 }
 
-.point_6 {
+.spoint_6,
+.fpoint_6,
+.height_6 {
   top: 180px;
+}
+
+.fpoint_0,
+.fpoint_1,
+.fpoint_2,
+.fpoint_3,
+.fpoint_4,
+.fpoint_5 {
+  right: 0;
+}
+
+.height_0,
+.height_1,
+.height_2,
+.height_3,
+.height_4,
+.height_5 {
+  right: 100px;
 }
 
 .out__in {

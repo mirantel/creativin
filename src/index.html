@@ -5,7 +5,6 @@
 	<meta charset="utf-8">
 	<title>Template</title>
 	<meta name="viewport" content="width=device-width"/>
-	<link rel="stylesheet" media="screen" href="css/normalize.css" >
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.bxslider.min.js"></script>
@@ -19,15 +18,30 @@
 </head>
 <body>
 <div class="out">
-<div class="out__wrap">
 <div class="out__in">
 	<div class="scrolled">0</div>
+	<div class="step">0</div>
+	<div class="winheight">0</div>
 	<ul>
-		<li class="point_0"></li>
-		<li class="point_1"></li>
-		<li class="point_2"></li>
-		<li class="point_3"></li>
-		<li class="point_4"></li>
+		<li class="spoint_0"></li>
+		<li class="spoint_1"></li>
+		<li class="spoint_2"></li>
+		<li class="spoint_3"></li>
+		<li class="spoint_4"></li>
+	</ul>
+	<ul>
+		<li class="fpoint_0"></li>
+		<li class="fpoint_1"></li>
+		<li class="fpoint_2"></li>
+		<li class="fpoint_3"></li>
+		<li class="fpoint_4"></li>
+	</ul>
+	<ul>
+		<li class="height_0"></li>
+		<li class="height_1"></li>
+		<li class="height_2"></li>
+		<li class="height_3"></li>
+		<li class="height_4"></li>
 	</ul>
 @@include('_main.html')
 @@include('_header.html')
@@ -35,7 +49,6 @@
 @@include('_services.html')
 @@include('_about-us.html')
 @@include('_contacts.html')
-</div>
 </div>
 </div>
 </body>

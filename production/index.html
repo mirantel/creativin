@@ -5,7 +5,6 @@
 	<meta charset="utf-8">
 	<title>Template</title>
 	<meta name="viewport" content="width=device-width"/>
-	<link rel="stylesheet" media="screen" href="css/normalize.css" >
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.bxslider.min.js"></script>
@@ -19,17 +18,32 @@
 </head>
 <body>
 <div class="out">
-<div class="out__wrap">
 <div class="out__in">
 	<div class="scrolled">0</div>
+	<div class="step">0</div>
+	<div class="winheight">0</div>
 	<ul>
-		<li class="point_0"></li>
-		<li class="point_1"></li>
-		<li class="point_2"></li>
-		<li class="point_3"></li>
-		<li class="point_4"></li>
+		<li class="spoint_0"></li>
+		<li class="spoint_1"></li>
+		<li class="spoint_2"></li>
+		<li class="spoint_3"></li>
+		<li class="spoint_4"></li>
 	</ul>
-<div class="layer layer_main">
+	<ul>
+		<li class="fpoint_0"></li>
+		<li class="fpoint_1"></li>
+		<li class="fpoint_2"></li>
+		<li class="fpoint_3"></li>
+		<li class="fpoint_4"></li>
+	</ul>
+	<ul>
+		<li class="height_0"></li>
+		<li class="height_1"></li>
+		<li class="height_2"></li>
+		<li class="height_3"></li>
+		<li class="height_4"></li>
+	</ul>
+<div class="layer layer_main js-layer">
 	<div class="wrap">
 		<div class="inner">
 			<div class="lines-block">
@@ -93,7 +107,7 @@
 			</ul>
 		</div>
 	</header>
-<div class="layer layer_portfolio">
+<div class="layer layer_portfolio js-layer">
 	<div class="inner">
 		<ul class="project-list">
 			<li class="project-list__col">
@@ -242,7 +256,7 @@
 		<span class="btn-slide__in with-shadow__in"><i class="icon-arr-bottom"></i></span>
 	</div>
 </div>
-<div class="layer layer_services">
+<div class="layer layer_services js-layer">
 	<div class="service service_1">
 		<div class="wrap">
 			<div class="inner">
@@ -305,7 +319,7 @@
 		</div>
 	</div>
 </div>
-<div class="layer layer_about-us">
+<div class="layer layer_about-us js-layer">
 	<div class="about about_hacker">
 		<div class="inner">
 			<div class="about__photo">
@@ -349,11 +363,10 @@
 		</div>
 	</div>
 </div>
-<div class="layer layer_contacts">
+<div class="layer layer_contacts js-layer">
 	<div class="inner">
 
 	</div>
-</div>
 </div>
 </div>
 </div>
