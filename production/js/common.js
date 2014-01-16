@@ -3,15 +3,12 @@ $(document).ready(function(){
 
 	var windowHeight;
 	var windowWidth;
-	var maxHeight = 0;
 	var HEADER_HEIGHT = 66;
 
 	var layers = [];
 	var Layer = function($element) {
 		this.element = $element;
-		this.starPoint = null;
-		this.finishPoint = null;
-		this.contentHeight = $element.find('.js-content').height();
+		this.contentHeight = 0;
 	};
 
 	$('.project-list').bxSlider({
@@ -21,57 +18,46 @@ $(document).ready(function(){
 		slideMargin: 20
 	});
 
+	$('.js-layer').each(function(i) {
+		var layer = new Layer($(this));
+		layers.push(layer);
+	});
+
 	onResize();
 	$(window).resize(onResize);
 
 	$(window).scroll(parallax);
 
-	function scale(){
+	// function scale(){
 
-	}
+	// }
 
 	function onResize(){
-		layers = [];
-		maxHeight = 0;
 		windowHeight = $(window).height();
 		windowWidth = $(window).width();
 
-		$('.js-layer').each(function(i) {
-			var layer = new Layer($(this));
-
-			//layer.height = windowHeight;
-
-			layer.element.find('.wrap').height(windowHeight);
-			maxHeight = maxHeight + windowHeight;
-
-			if (i == 0){
-				layer.startPoint = 0;
-				layer.finishPoint = windowHeight;
-			}
-			else{
-				layer.startPoint = layers[i - 1].finishPoint;
-				layer.finishPoint = layers[i - 1].finishPoint + windowHeight;
-			};
-
-			layers.push(layer);
-
+		$(layers).each(function(i) {
+			layers[i].element.css('height', windowHeight + 'px');
+			layers[i].element.find('.layer__wrap').height(windowHeight);
 		});
 
-		$('.out').height(maxHeight);
+		$('.out').height(windowHeight * 5);
 		layers[2].element.find('.wrap').height(windowHeight - HEADER_HEIGHT);
 
-		$('.fpoint_0').html(layers[0].finishPoint);
-		$('.fpoint_1').html(layers[1].finishPoint);
-		$('.fpoint_2').html(layers[2].finishPoint);
-		$('.fpoint_3').html(layers[3].finishPoint);
-		$('.fpoint_4').html(layers[4].finishPoint);
+
+
+
+		$('.fpoint_0').html(windowHeight);
+		$('.fpoint_1').html(windowHeight * 2);
+		$('.fpoint_2').html(windowHeight * 3);
+		$('.fpoint_3').html(windowHeight * 4);
+		$('.fpoint_4').html(windowHeight * 5);
 		$('.spoint_0').html(layers[0].contentHeight);
 		$('.spoint_1').html(layers[1].contentHeight);
 		$('.spoint_2').html(layers[2].contentHeight);
 		$('.spoint_3').html(layers[3].contentHeight);
 		$('.spoint_4').html(layers[4].contentHeight);
 		$('.winheight').html(windowHeight);
-		
 	};
 
 	function parallax(){
@@ -79,7 +65,6 @@ $(document).ready(function(){
 		var scrollStep = 0;
 
 		var layerService = $('.service');
-		$('.scrolled').html(scrolled); // test
 
 		if (scrolled == 0){
 			scrollStep = 0;
@@ -173,6 +158,7 @@ $(document).ready(function(){
 		// 	layers[scrollStep - 1].element.css('top', (layers[scrollStep - 1].startPoint - layers[scrollStep - 1].height) + 'px');
 		// };
 		$('.step').html(scrollStep); // test
+		$('.scrolled').html(scrolled); // test
 	};
 
 

@@ -441,7 +441,12 @@ ol {
   z-index: 60;
 }
 
-.layer_main .wrap {
+.layer_main .btn-slide {
+  bottom: 100px;
+  position: relative;
+}
+
+.layer__wrap {
   display: table;
   height: 100%;
   width: 593px;
@@ -449,14 +454,9 @@ ol {
   margin: 0 auto;
 }
 
-.layer_main .inner {
+.layer__inner {
   vertical-align: middle;
   display: table-cell;
-}
-
-.layer_main .btn-slide {
-  bottom: 100px;
-  position: relative;
 }
 
 .icon-device {
@@ -499,7 +499,7 @@ ol {
   z-index: 30;
 }
 
-.layer_portfolio .inner {
+.layer__inner {
   padding: 99px 70px 6px;
 }
 

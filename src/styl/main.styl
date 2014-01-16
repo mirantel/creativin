@@ -1,20 +1,21 @@
-.layer_main
-	background $blue_dark
-	text-align center
-	z-index 60
-	//transition height 0.2s ease-out
-	.wrap
+.layer
+	&_main
+		background $blue_dark
+		text-align center
+		z-index 60
+		//transition height 0.2s ease-out
+		.btn-slide
+			bottom 100px
+			position relative
+	&__wrap
 		display table
 		height 100%
 		width 593px
 		padding 0 10px
 		margin 0 auto
-	.inner
+	&__inner
 		vertical-align middle
 		display table-cell
-	.btn-slide
-		bottom 100px
-		position relative
 
 .icon-device
 	background url("../img/icon-device.png") 50% 50% no-repeat
