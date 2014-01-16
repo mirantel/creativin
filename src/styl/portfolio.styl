@@ -1,137 +1,119 @@
-.layer_portfolio{
-	background: $yellow;
-	z-index: 30;
-	.inner{
-		padding: 99px 70px 6px;
-	}
-}
-.project-list{
-	_clearfix();
-	list-style: none;
-	line-height: 1.4;
-	height: 620px;
-	overflow: hidden;
+.layer_portfolio
+	background $yellow
+	z-index 30
+	.inner
+		padding 99px 70px 6px
 
-	&__col{
-		
-	}
-}
-.bx-wrapper{
-	margin: 0 auto;
-	position: relative;
-}
-.bx-pager{
-	margin: 30px 0;
-	text-align: center;
-	font: 0/0 a;
-	line-height: 0;
-	color: transparent;
-}
-.bx-pager-item{
-	display: inline-block;
-	height: 9px;
-	width: 9px;
-	border-radius: 50%;
-	margin: 0 4px;
-	position: relative;
-	&::before{
-		position: absolute;
-		top: 34%;
-		left: 48%;
-		width: 100%;
-		height: 100%;
-		border-radius: 0 0 0 75%;
-		background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
-		content: "";
-		transform: rotate(-45deg);
-	}
-}
-.bx-pager-link{
-	box-shadow: 0 0 0 1px #fff inset;
-	display: block;
-	border-radius: 50%;
-	height: 100%;
-	position: relative;
-	background: $yellow;
-	&.active{
-		background: #fff;
-		box-shadow: 0 0 0 1px #fff inset, 0 0 0 1px #fff;
-	}
-}
+.project-list
+	_clearfix()
+	list-style none
+	line-height 1.4
+	height 620px
+	overflow hidden
+
+.bx-wrapper
+	margin 0 auto
+	position relative
+
+.bx-pager
+	margin 30px 0
+	text-align center
+	font 0/0 a
+	line-height 0
+	color transparent
+
+.bx-pager-item
+	display inline-block
+	height 9px
+	width 9px
+	border-radius 50%
+	margin 0 4px
+	position relative
+	&:before
+		position absolute
+		top 34%
+		left 48%
+		width 100%
+		height 100%
+		border-radius 0 0 0 75%
+		background linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)
+		content ""
+		transform rotate(-45deg)
+
+.bx-pager-link
+	box-shadow 0 0 0 1px #fff inset
+	display block
+	border-radius 50%
+	height 100%
+	position relative
+	background $yellow
+	&.active
+		background #fff
+		box-shadow 0 0 0 1px #fff inset, 0 0 0 1px #fff
+
 .bx-prev,
-.bx-next{
-	height: 35px;
-	width: 35px;
-	font: 0/0 a;
-	color: transparent;
-	border: 1px solid #fef3d1;
-	top: 293px;
-	position: absolute;
-	background: linear-gradient(rgba(241, 172, 1,1) 0%, rgba(241, 172, 1,.0) 100%);
-}
-.bx-prev{
-	left: -60px;
-	border-width: 1px 0 0 1px;
-	transform: rotate(-45deg);
-}
-.bx-next{
-	right: -60px;
-	border-width: 1px 1px 0 0;
-	transform: rotate(45deg);
-}
-.project{
-	margin: 10px 0;
-	width: 346px;
-	float: left;
-	position: relative;
-	text-decoration: none;
-	display: block;
-	&:after{
-		position: absolute;
-		top: 100%;
-		height: 8px;
-		width: 342px;
-		background-image: embedurl("../date-img/project-shadow.png");
-		left: 2px;
-		content: "";
-	}
-	&__img{
-		img{
-			vertical-align: top;
-		}
-	}
-	&__info{
-		box-shadow: 0 -1px 0 #f2f2f2;
-		border-top: 1px solid #fafafa;
-		background: #f2f2f2;
-		color: #555;
-		font-size: 14px;
-		padding: 12px 20px 0;
-		box-sizing: border-box;
-		height: 77px;
-		p{
-			margin: 0;
-		}
-	}
-	&__title{
-		text-transform: uppercase;
-		font-size: 14px;
-		font-weight: bold;
-		color: #333;
-		margin: 0;
-	}
-	&:hover{
-		background: #08233E;
-		img{
-			opacity: 0.2;
-		}
-		.project__info{
-			background: #08233E;
-			border-top-color: #08233e;
-			box-shadow: 0 -1px 0 #08233e;
-		}
-		.project__info, .project__title{
-			color: #fff;
-		}
-	}
-}
+.bx-next
+	height 35px
+	width 35px
+	font 0/0 a
+	color transparent
+	border 1px solid #fef3d1
+	top 293px
+	position absolute
+	background linear-gradient(rgba(241, 172, 1,1) 0%, rgba(241, 172, 1,.0) 100%)
+
+.bx-prev
+	left -60px
+	border-width 1px 0 0 1px
+	transform rotate(-45deg)
+
+.bx-next
+	right -60px
+	border-width 1px 1px 0 0
+	transform rotate(45deg)
+
+.project
+	margin 10px 0
+	width 346px
+	float left
+	position relative
+	text-decoration none
+	display block
+	&:after
+		position absolute
+		top 100%
+		height 8px
+		width 342px
+		background-image embedurl("../date-img/project-shadow.png")
+		left 2px
+		content ""
+	&__img
+		img
+			vertical-align top
+	&__info
+		box-shadow 0 -1px 0 #f2f2f2
+		border-top 1px solid #fafafa
+		background #f2f2f2
+		color #555
+		font-size 14px
+		padding 12px 20px 0
+		box-sizing border-box
+		height 77px
+		p
+			margin 0
+	&__title
+		text-transform uppercase
+		font-size 14px
+		font-weight bold
+		color #333
+		margin 0
+	&:hover
+		background #08233E
+		img
+			opacity 0.2
+		.project__info
+			background #08233E
+			border-top-color #08233e
+			box-shadow 0 -1px 0 #08233e
+		.project__info, .project__title
+			color #fff

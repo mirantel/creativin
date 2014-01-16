@@ -11,7 +11,7 @@ $(document).ready(function(){
 		this.element = $element;
 		this.starPoint = null;
 		this.finishPoint = null;
-		this.height = $element.height();
+		this.contentHeight = $element.find('.js-content').height();
 	};
 
 	$('.project-list').bxSlider({
@@ -26,6 +26,10 @@ $(document).ready(function(){
 
 	$(window).scroll(parallax);
 
+	function scale(){
+
+	}
+
 	function onResize(){
 		layers = [];
 		maxHeight = 0;
@@ -35,21 +39,18 @@ $(document).ready(function(){
 		$('.js-layer').each(function(i) {
 			var layer = new Layer($(this));
 
-			layer.height = $(this).height();
-			if (layer.height < windowHeight ) { 
-				layer.height = windowHeight; 
-			}
+			//layer.height = windowHeight;
 
-			layer.element.find('.wrap').height(layer.height);
-			maxHeight = maxHeight + layer.height;
+			layer.element.find('.wrap').height(windowHeight);
+			maxHeight = maxHeight + windowHeight;
 
 			if (i == 0){
 				layer.startPoint = 0;
-				layer.finishPoint = layer.height;
+				layer.finishPoint = windowHeight;
 			}
 			else{
 				layer.startPoint = layers[i - 1].finishPoint;
-				layer.finishPoint = layers[i - 1].finishPoint + layer.height;
+				layer.finishPoint = layers[i - 1].finishPoint + windowHeight;
 			};
 
 			layers.push(layer);
@@ -57,23 +58,18 @@ $(document).ready(function(){
 		});
 
 		$('.out').height(maxHeight);
-		layers[2].element.find('.wrap').height(layers[2].height - HEADER_HEIGHT);
+		layers[2].element.find('.wrap').height(windowHeight - HEADER_HEIGHT);
 
 		$('.fpoint_0').html(layers[0].finishPoint);
 		$('.fpoint_1').html(layers[1].finishPoint);
 		$('.fpoint_2').html(layers[2].finishPoint);
 		$('.fpoint_3').html(layers[3].finishPoint);
 		$('.fpoint_4').html(layers[4].finishPoint);
-		$('.spoint_0').html(layers[0].startPoint);
-		$('.spoint_1').html(layers[1].startPoint);
-		$('.spoint_2').html(layers[2].startPoint);
-		$('.spoint_3').html(layers[3].startPoint);
-		$('.spoint_4').html(layers[4].startPoint);
-		$('.height_0').html(layers[0].height);
-		$('.height_1').html(layers[1].height);
-		$('.height_2').html(layers[2].height);
-		$('.height_3').html(layers[3].height);
-		$('.height_4').html(layers[4].height);
+		$('.spoint_0').html(layers[0].contentHeight);
+		$('.spoint_1').html(layers[1].contentHeight);
+		$('.spoint_2').html(layers[2].contentHeight);
+		$('.spoint_3').html(layers[3].contentHeight);
+		$('.spoint_4').html(layers[4].contentHeight);
 		$('.winheight').html(windowHeight);
 		
 	};
@@ -85,38 +81,35 @@ $(document).ready(function(){
 		var layerService = $('.service');
 		$('.scrolled').html(scrolled); // test
 
-		if (scrolled == layers[0].startPoint){
+		if (scrolled == 0){
 			scrollStep = 0;
-			layers[0].element.css('height', layers[0].height + 'px');
+			layers[0].element.css('height', windowHeight + 'px');
 		}
-		else if (scrolled > layers[0].startPoint && scrolled <= layers[0].finishPoint) {
+		else if (scrolled > 0 && scrolled <= windowHeight) {
 			scrollStep = 0;
-			layers[0].element.css('height', layers[0].finishPoint - scrolled + 'px');
-		}
-		else if (scrolled > layers[1].startPoint && scrolled <= layers[1].finishPoint) {
-			scrollStep = 1;
-			layers[1].element.css('height', layers[1].height + 'px');
-			layers[0].element.css('height', '0px'); // prev
+			layers[0].element.css('height', windowHeight - scrolled + 'px');
+			layers[1].element.css('height', windowHeight + 'px');
 			layerService.css('height', '0px'); // next
 		}
-		else if (scrolled > layers[2].startPoint && scrolled <= layers[2].finishPoint){
-			scrollStep = 2;
-			var zn = '-' + (layers[scrollStep - 1].startPoint - windowHeight) + 'px';
-			
-			layers[2].element.css('height', layers[2].height - HEADER_HEIGHT + 'px');
-			layerService.css('height', scrolled - layers[2].startPoint - HEADER_HEIGHT +'px').removeClass('service_bottom');
+		else if (scrolled > windowHeight && scrolled <= windowHeight * 2) {
+			scrollStep = 1;
+			layers[0].element.css('height', '0px'); // prev
+			layers[1].element.css('height', windowHeight + '0px');
+			layers[2].element.css('height', windowHeight - HEADER_HEIGHT + 'px');
+			layerService.css('height', scrolled - windowHeight - HEADER_HEIGHT +'px').removeClass('service_bottom');
 			layers[3].element.css('height', '0px'); // next
+			$('.about').css('height','0px');
 		}
-		else if (scrolled > layers[3].startPoint && scrolled <= layers[3].finishPoint) {
-			scrollStep = 3;
-			layerService.css('height',layers[2].height - HEADER_HEIGHT +'px').addClass('service_bottom');
-			layers[2].element.css('height',layers[2].height - HEADER_HEIGHT +'px').css('height',layers[3].finishPoint - HEADER_HEIGHT - scrolled+'px');
-			layers[3].element.css('height',layers[3].height+'px');
-			$('.about').css('height',layers[3].height+'px');
+		else if (scrolled > windowHeight * 2 && scrolled <= windowHeight * 3){
+			scrollStep = 2;
+			layerService.css('height',windowHeight - HEADER_HEIGHT +'px').addClass('service_bottom');
+			layers[2].element.css('height',windowHeight - HEADER_HEIGHT +'px').css('height',windowHeight*3 - HEADER_HEIGHT - scrolled+'px');
+			layers[3].element.css('height',windowHeight+'px');
+			$('.about').css('height',windowHeight+'px');
 			layers[1].element.css('height','0px');
 			var output = 0;
-			if (scrolled < layers[3].finishPoint - 425){
-				output = (layers[3].finishPoint - scrolled - 425) * (windowWidth/2)/(windowHeight);
+			if (scrolled < windowHeight * 3 - 425){
+				output = (windowHeight * 3 - scrolled - 425) * (windowWidth/2)/(windowHeight);
 
 				$(".about_hacker .about__text").css({
 					"-webkit-transform": "translateX(" + -output + "px)",
@@ -131,7 +124,7 @@ $(document).ready(function(){
 				});
 			}
 			else{
-				output = (layers[3].finishPoint - scrolled - 280) * (windowWidth/2) / 425;
+				output = (windowHeight * 3 - scrolled - 280) * (windowWidth/2) / 425;
 				if(output < 0) { output = 0; }
 
 				$(".about_hacker .about__text, .about_hipster .about__text").css({
@@ -153,26 +146,32 @@ $(document).ready(function(){
 				});
 			}
 		}
-		else if (scrolled > layers[4].startPoint && scrolled <= layers[4].finishPoint) {
-			scrollStep = 4;
+		else if (scrolled > windowHeight * 3 && scrolled <= windowHeight * 4) {
+			scrollStep = 3;
 			layers[2].element.css('height','0px');
 			$(".about_hacker .about__photo, .about_hipster .about__photo").css({
 				"-webkit-transform": "translateX(0px)",
 				"-moz-transform": "translateX(0px)",
 				transform: "translateX(0px)"
 			});
-
-			$('.about').css('height',layers[3].height + 'px').css('height',layers[4].finishPoint - scrolled + 'px');
+			$('.about').css('height',windowHeight + 'px').css('height',windowHeight * 4 - scrolled + 'px');
 		}
+		else if (scrolled >= windowHeight * 4) {
+			scrollStep = 4;
+			$('.about').css('height','0px');
+		}
+		// if (scrolled >= windowHeight*scrollStep - 50 && scrolled <= windowHeight*scrollStep + 50){
+		// 	$(window).scrollTop(windowHeight*scrollStep);
+		// }
 
 
-		if (scrollStep > 0 && scrolled > (layers[scrollStep - 1].finishPoint + windowHeight)){
-			layers[scrollStep].element.css('top', '-' + (scrolled - layers[scrollStep].startPoint - windowHeight) + 'px');
+		// if (scrollStep > 0 && scrolled > (layers[scrollStep - 1].finishPoint + windowHeight)){
+		// 	layers[scrollStep].element.css('top', '-' + (scrolled - layers[scrollStep].startPoint - windowHeight) + 'px');
 			
-		};
-		if (scrollStep > 1 && layers[scrollStep - 1].height > windowHeight){
-			layers[scrollStep - 1].element.css('top', (layers[scrollStep - 1].startPoint - layers[scrollStep - 1].height) + 'px');
-		};
+		// };
+		// if (scrollStep > 1 && layers[scrollStep - 1].height > windowHeight){
+		// 	layers[scrollStep - 1].element.css('top', (layers[scrollStep - 1].startPoint - layers[scrollStep - 1].height) + 'px');
+		// };
 		$('.step').html(scrollStep); // test
 	};
 

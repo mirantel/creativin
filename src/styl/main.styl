@@ -1,57 +1,44 @@
-.layer_main{
-	background: $blue_dark;
-	text-align: center;
-	z-index: 60;
-	transition: height 0.2s ease-out;
-	.wrap{
-		display: table;
-		height: 100%;
-		width: 593px;
-		padding: 0 10px;
-		margin: 0 auto;
-	}
-	.inner{
-		vertical-align: middle;
-		display: table-cell;
-	}
+.layer_main
+	background $blue_dark
+	text-align center
+	z-index 60
+	//transition height 0.2s ease-out
+	.wrap
+		display table
+		height 100%
+		width 593px
+		padding 0 10px
+		margin 0 auto
+	.inner
+		vertical-align middle
+		display table-cell
+	.btn-slide
+		bottom 100px
+		position relative
 
-	.btn-slide{
-		bottom: 100px;
-		position: relative;
-	}
-}
+.icon-device
+	background url("../img/icon-device.png") 50% 50% no-repeat
+	width 46px
+	height 45px
+	display inline-block
 
-.icon-device{
-	background: url("../img/icon-device.png") 50% 50% no-repeat;
-	width: 46px;
-	height: 45px;
-	display: inline-block;
-}
+.lines-block
+	background 0 50% repeat-x
+	background-image embedurl("../date-img/bg-lines.png")
+	.lang
+		background $blue_dark
+		width 95px
+		margin 0 auto
+	.icon-device
+		padding 0 15px
+		background-color $blue_dark
 
-.lines-block{
-	background: 0 50% repeat-x;
-	background-image: embedurl("../date-img/bg-lines.png");
+.big-logo
+	margin 55px 0 20px
 
-	.lang{
-		background: $blue_dark;
-		width: 95px;
-		margin: 0 auto;
-	}
-
-	.icon-device{
-		padding: 0 15px;
-		background-color: $blue_dark;
-	}
-}
-
-.big-logo{
-	margin: 55px 0 20px;
-}
-
-.slogan{
-	color: #274d71;
-	font-size: 34px;
-	text-shadow: 1px 1px 0 rgba(0,0,0,.2);
-	font-weight: 300;
-	margin-top: 25px;
-}
+.slogan
+	color #274d71
+	font-size 34px
+	text-shadow 1px 1px 0 rgba(0,0,0,.2)
+	font-weight 300
+	margin-top 25px
