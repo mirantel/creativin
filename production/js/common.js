@@ -1,9 +1,11 @@
 $(window).scrollTop(0);
-$(document).ready(function(){
+$(window).load(function(){
 
 	var windowHeight;
 	var windowWidth;
 	var HEADER_HEIGHT = 66;
+
+	var maxServiceHeight = 0;
 
 	var layers = [];
 	var Layer = function($element) {
@@ -18,23 +20,48 @@ $(document).ready(function(){
 		slideMargin: 20
 	});
 
+	$('.service').each(function(i) {
+		if ($(this).find('.layer__content').height() > maxServiceHeight){
+			maxServiceHeight = $(this).find('.layer__content').height();
+		}
+	});
+
+	$('.service .layer__content').height(maxServiceHeight);
+
 	$('.js-layer').each(function(i) {
 		var layer = new Layer($(this));
+		layer.contentHeight = layer.element.find('.js-content').innerHeight();
 		layers.push(layer);
 	});
 
+
+
 	onResize();
-	$(window).resize(onResize);
+	$(window).resize(function(){
+		onResize();
+		parallax();
+	});
 
 	$(window).scroll(parallax);
 
-	// function scale(){
 
-	// }
 
 	function onResize(){
 		windowHeight = $(window).height();
 		windowWidth = $(window).width();
+
+		$(layers).each(function(i) {
+			var scaleValue = 0;
+			if (layers[i].contentHeight > windowHeight) {
+				scaleValue = windowHeight / layers[i].contentHeight;
+
+				layers[i].element.find('.layer__content').css({
+					"-webkit-transform": "scale(" + scaleValue +")",
+					"-moz-transform": "scale("+ scaleValue +")",
+					transform: "scale("+ scaleValue +")"
+				});
+			};
+		});
 
 		$(layers).each(function(i) {
 			layers[i].element.css('height', windowHeight + 'px');
@@ -43,9 +70,6 @@ $(document).ready(function(){
 
 		$('.out').height(windowHeight * 5);
 		layers[2].element.find('.wrap').height(windowHeight - HEADER_HEIGHT);
-
-
-
 
 		$('.fpoint_0').html(windowHeight);
 		$('.fpoint_1').html(windowHeight * 2);
@@ -79,7 +103,7 @@ $(document).ready(function(){
 		else if (scrolled > windowHeight && scrolled <= windowHeight * 2) {
 			scrollStep = 1;
 			layers[0].element.css('height', '0px'); // prev
-			layers[1].element.css('height', windowHeight + '0px');
+			layers[1].element.css('height', windowHeight + 'px');
 			layers[2].element.css('height', windowHeight - HEADER_HEIGHT + 'px');
 			layerService.css('height', scrolled - windowHeight - HEADER_HEIGHT +'px').removeClass('service_bottom');
 			layers[3].element.css('height', '0px'); // next

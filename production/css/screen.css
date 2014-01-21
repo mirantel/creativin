@@ -50,6 +50,7 @@ html,
 body {
   height: 100%;
   font-family: "SegoeUI", "Optima", "Verdana", sans-serif;
+  margin: 0;
 }
 
 ul,
@@ -435,6 +436,12 @@ ol {
   left: 15px;
 }
 
+.layer__content {
+  -webkit-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+
 .layer_main {
   background: #08233e;
   text-align: center;
@@ -446,15 +453,18 @@ ol {
   position: relative;
 }
 
-.layer__wrap {
+.layer_main .layer__content {
+  padding: 100px 0;
+}
+
+.layer_main .layer__wrap {
   display: table;
   height: 100%;
   width: 593px;
-  padding: 0 10px;
   margin: 0 auto;
 }
 
-.layer__inner {
+.layer_main .layer__inner {
   vertical-align: middle;
   display: table-cell;
 }
@@ -499,7 +509,7 @@ ol {
   z-index: 30;
 }
 
-.layer__inner {
+.layer_portfolio__inner {
   padding: 99px 70px 6px;
 }
 
