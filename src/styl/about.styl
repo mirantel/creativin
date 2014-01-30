@@ -48,23 +48,25 @@
 		padding 128px 38px 0
 		width 503px
 
-
+.about__social
+	.about_hacker &
+		float left
+	.about_hipster &
+		float right
 
 .social
 	height 35px
 	width 35px
+	float left
 	.with-shadow__in
 		transition background 0.2s ease-out
-	
 	.about_hacker &
-		float left
 		margin-right 10px
 		.with-shadow__in
 			background #1a3c5e
 			&:hover
 				background #fff
 	.about_hipster &
-		float right
 		margin-left 10px
 		.with-shadow__in
 			background #e99f01
@@ -72,5 +74,34 @@
 				background #fff
 
 	.icon-twitter
+		width 25px
+		height 22px
+		position absolute
+		top 11px
+		left 9px
+		background-image embedurl("../date-img/icon-twitter.png")
+		background-repeat no-repeat
+	&:hover .icon-twitter
+		background-image embedurl("../date-img/icon-twitter_h.png")
 	.icon-facebook
+		width 21px
+		height 23px
+		position absolute
+		top 10px
+		left 14px
+		background-image embedurl("../date-img/icon-facebook.png")
+		background-repeat no-repeat
+	.about_hacker &:hover .icon-facebook
+		background-image embedurl("../date-img/icon-facebook_h.png")
+	.about_hipster &:hover .icon-facebook
+		background-image embedurl("../date-img/icon-facebook_h2.png")
 	.icon-be
+		width 26px
+		height 22px
+		position absolute
+		top 12px
+		left 9px
+		background-image embedurl("../date-img/icon-be.png")
+		background-repeat no-repeat
+	&:hover .icon-be
+		background-image embedurl("../date-img/icon-be_h.png")

@@ -120,13 +120,13 @@ $(window).load(function(){
 			if (scrolled < windowHeight * 3 - 425){
 				output = (windowHeight * 3 - scrolled - 425) * (windowWidth/2)/(windowHeight);
 
-				$(".about_hacker .about__text").css({
+				$(".about_hacker .about__info").css({
 					"-webkit-transform": "translateX(" + -output + "px)",
 					"-moz-transform": "translateX(" + -output + "px)",
 					transform: "translateX(" + -output + "px)"
 				});
 
-				$(".about_hipster .about__text").css({
+				$(".about_hipster .about__info").css({
 					"-webkit-transform": "translateX(" + output + "px)",
 					"-moz-transform": "translateX(" + output + "px)",
 					transform: "translateX(" + output + "px)"
@@ -136,7 +136,7 @@ $(window).load(function(){
 				output = (windowHeight * 3 - scrolled - 280) * (windowWidth/2) / 425;
 				if(output < 0) { output = 0; }
 
-				$(".about_hacker .about__text, .about_hipster .about__text").css({
+				$(".about_hacker .about__info, .about_hipster .about__info").css({
 					"-webkit-transform": "translateX(0px)",
 					"-moz-transform": "translateX(0px)",
 					transform: "translateX(0px)"
