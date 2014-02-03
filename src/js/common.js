@@ -111,6 +111,7 @@ $(window).load(function(){
 		}
 		else if (scrolled > windowHeight * 2 && scrolled <= windowHeight * 3){
 			scrollStep = 2;
+			layers[0].element.css('height', '0px');
 			layerService.css('height',windowHeight - HEADER_HEIGHT +'px').addClass('service_bottom');
 			layers[2].element.css('height',windowHeight - HEADER_HEIGHT +'px').css('height',windowHeight*3 - HEADER_HEIGHT - scrolled+'px');
 			layers[3].element.css('height',windowHeight+'px');
@@ -157,6 +158,8 @@ $(window).load(function(){
 		}
 		else if (scrolled > windowHeight * 3 && scrolled <= windowHeight * 4) {
 			scrollStep = 3;
+			layers[0].element.css('height', '0px');
+			layers[1].element.css('height', '0px');
 			layers[2].element.css('height','0px');
 			$(".about_hacker .about__photo, .about_hipster .about__photo").css({
 				"-webkit-transform": "translateX(0px)",
@@ -168,6 +171,8 @@ $(window).load(function(){
 		else if (scrolled >= windowHeight * 4) {
 			scrollStep = 4;
 			$('.about').css('height','0px');
+			layers[0].element.css('height', '0px');
+			layers[1].element.css('height', '0px');
 		}
 		// if (scrolled >= windowHeight*scrollStep - 50 && scrolled <= windowHeight*scrollStep + 50){
 		// 	$(window).scrollTop(windowHeight*scrollStep);
