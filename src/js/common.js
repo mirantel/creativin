@@ -1,4 +1,3 @@
-$(window).scrollTop(0);
 $(window).load(function(){
 
 	var windowHeight;
@@ -34,7 +33,50 @@ $(window).load(function(){
 		layers.push(layer);
 	});
 
+	$('#js-nav-main').click(function(){
+		$('html, body').animate({
+			scrollTop: 0
+		}, 1000, function() {
+			parallax(); // Callback is required for iOS
+		});
+		return false;
+	});
 
+	$('#js-nav-portfolio, #js-slide-portfolio').click(function(){
+		$('html, body').animate({
+			scrollTop: windowHeight
+		}, 1000, function() {
+			parallax(); // Callback is required for iOS
+		});
+		return false;
+	});
+
+	$('#js-nav-services').click(function(){
+		$('html, body').animate({
+			scrollTop: windowHeight * 2
+		}, 1000, function() {
+			parallax(); // Callback is required for iOS
+		});
+		return false;
+	});
+
+	$('#js-nav-about-us').click(function(){
+		$('html, body').animate({
+			scrollTop: windowHeight * 3
+		}, 1000, function() {
+			parallax(); // Callback is required for iOS
+		});
+		return false;
+	});
+
+	$('#js-nav-contacts').click(function(){
+		$('html, body').animate({
+			scrollTop: (windowHeight * 4)
+		}, 1000, function() {
+			parallax(); // Callback is required for iOS
+		});
+		return false;
+	});
 
 	onResize();
 	$(window).resize(function(){
@@ -96,12 +138,22 @@ $(window).load(function(){
 		}
 		else if (scrolled > 0 && scrolled <= windowHeight) {
 			scrollStep = 0;
+			$('.js-nav-link').removeClass('is-active');
+			$('#js-nav-portfolio').addClass('is-active');
 			layers[0].element.css('height', windowHeight - scrolled + 'px');
 			layers[1].element.css('height', windowHeight + 'px');
 			layerService.css('height', '0px'); // next
 		}
 		else if (scrolled > windowHeight && scrolled <= windowHeight * 2) {
 			scrollStep = 1;
+			if (scrolled >= windowHeight + windowHeight * 0.7){
+				$('.js-nav-link').removeClass('is-active');
+				$('#js-nav-services').addClass('is-active');
+			}
+			else {
+				$('.js-nav-link').removeClass('is-active');
+				$('#js-nav-portfolio').addClass('is-active');
+			}
 			layers[0].element.css('height', '0px'); // prev
 			layers[1].element.css('height', windowHeight + 'px');
 			layers[2].element.css('height', windowHeight - HEADER_HEIGHT + 'px');
@@ -111,6 +163,14 @@ $(window).load(function(){
 		}
 		else if (scrolled > windowHeight * 2 && scrolled <= windowHeight * 3){
 			scrollStep = 2;
+			if (scrolled >= windowHeight * 2 + windowHeight * 0.7 - HEADER_HEIGHT){
+				$('.js-nav-link').removeClass('is-active');
+				$('#js-nav-about-us').addClass('is-active');
+			}
+			else {
+				$('.js-nav-link').removeClass('is-active');
+				$('#js-nav-services').addClass('is-active');
+			}
 			layers[0].element.css('height', '0px');
 			layerService.css('height',windowHeight - HEADER_HEIGHT +'px').addClass('service_bottom');
 			layers[2].element.css('height',windowHeight - HEADER_HEIGHT +'px').css('height',windowHeight*3 - HEADER_HEIGHT - scrolled+'px');
@@ -158,6 +218,14 @@ $(window).load(function(){
 		}
 		else if (scrolled > windowHeight * 3 && scrolled <= windowHeight * 4) {
 			scrollStep = 3;
+			if (scrolled >= windowHeight * 3 + windowHeight * 0.7 - HEADER_HEIGHT){
+				$('.js-nav-link').removeClass('is-active');
+				$('#js-nav-contacts').addClass('is-active');
+			}
+			else {
+				$('.js-nav-link').removeClass('is-active');
+				$('#js-nav-about-us').addClass('is-active');
+			}
 			layers[0].element.css('height', '0px');
 			layers[1].element.css('height', '0px');
 			layers[2].element.css('height','0px');

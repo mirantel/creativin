@@ -19,8 +19,8 @@
 <body>
 <div class="out">
 <div class="out__in">
-	<div class="scrolled">0</div>
-	<div class="step">0</div>
+<!-- 	<div class="scrolled">0</div>
+	<div class="step">0</div> -->
 	<div class="winheight">0</div>
 	<ul>
 		<li class="spoint_0"></li>
@@ -29,13 +29,13 @@
 		<li class="spoint_3"></li>
 		<li class="spoint_4"></li>
 	</ul>
-	<ul>
+<!-- 	<ul>
 		<li class="fpoint_0"></li>
 		<li class="fpoint_1"></li>
 		<li class="fpoint_2"></li>
 		<li class="fpoint_3"></li>
 		<li class="fpoint_4"></li>
-	</ul>
+	</ul> -->
 	<section class="layer layer_main js-layer">
 		<div class="layer__wrap">
 			<div class="layer__inner">
@@ -56,13 +56,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="btn-slide btn-slide_blue with-shadow">
+		<a href="#portfolio" id="js-slide-portfolio" class="btn-slide btn-slide_blue with-shadow">
 			<span class="btn-slide__in with-shadow__in"><i class="icon-arr-bottom"></i></span>
-		</div>
+		</a>
 	</section>
 	<header class="header">
 		<div class="inner">
-			<a href="#" class="logo"><strong>Creativin</strong></a>
+			<a href="#" id="js-nav-main" class="logo"><strong>Creativin</strong></a>
 
 			<ul class="lang">
 				<li class="active with-shadow"><a href="#" class="with-shadow__in">EN</a></li>
@@ -71,26 +71,26 @@
 
 			<ul class="nav">
 				<li class="nav__item with-shadow">
-					<a href="">
+					<a href="#portfolio" class="js-nav-link" id="js-nav-portfolio" >
 						<span class="nav__icon with-shadow__in"><i class="icon-portfolio"></i>
 						</span>
 						<span class="nav__text">portfolio</span>
 					</a>
 				</li>
-				<li class="nav__item with-shadow">
-					<a href="" class="is-active">
+				<li class="nav__item  with-shadow">
+					<a href="#services" class="js-nav-link" id="js-nav-services">
 						<span class="nav__icon with-shadow__in"><i class="icon-services"></i></span>
 						<span class="nav__text">services</span>
 					</a>
 				</li>
 				<li class="nav__item with-shadow">
-					<a href="">
+					<a href="#about-us" class="js-nav-link" id="js-nav-about-us">
 						<span class="nav__icon with-shadow__in"><i class="icon-about-us"></i></span>
 						<span class="nav__text">about us</span>
 					</a>
 				</li>
 				<li class="nav__item with-shadow">
-					<a href="">
+					<a href="#contacts" class="js-nav-link" id="js-nav-contacts">
 						<span class="nav__icon with-shadow__in"><i class="icon-contacts"></i></span>
 						<span class="nav__text">contacts</span>
 					</a>
@@ -98,7 +98,7 @@
 			</ul>
 		</div>
 	</header>
-	<section class="layer layer_portfolio js-layer">
+	<section class="layer layer_portfolio js-layer" id="portfolio" name="portfolio">
 		<div class="layer__content js-content">
 			<div class="layer__inner">
 				<ul class="project-list">
@@ -244,13 +244,9 @@
 					</li>
 				</ul>
 			</div>
-			
-		</div>
-		<div class="btn-slide btn-slide_yellow with-shadow">
-			<span class="btn-slide__in with-shadow__in"><i class="icon-arr-bottom"></i></span>
 		</div>
 	</section>
-	<section class="layer layer_services js-layer">
+	<section class="layer layer_services js-layer" id="services" name="services">
 		<div class="service service_1">
 			<div class="wrap">
 				<div class="inner">
@@ -291,11 +287,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="btn-slide btn-slide_blue with-shadow">
-					<span class="btn-slide__in with-shadow__in"><i class="icon-arr-bottom"></i></span>
-				</div>
 			</div>
-
 		</div>
 		<div class="service service_3">
 			<div class="wrap">
@@ -318,7 +310,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="layer layer_about-us js-layer">
+	<section class="layer layer_about-us js-layer" id="about-us" name="about-us">
 		<div class="about about_hacker">
 			<div class="inner js-content">
 				<div class="about__photo">
@@ -375,7 +367,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="layer layer_contacts js-layer">
+	<section class="layer layer_contacts js-layer" id="contacts" name="contacts">
 		<div class="inner">
 			<div class="layer_content js-content">
 				<div class="contacts-left">
