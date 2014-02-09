@@ -12,11 +12,16 @@ $(window).load(function(){
 		this.contentHeight = 0;
 	};
 
-	$('.project-list').bxSlider({
-		slideWidth: 346,
-		minSlides: 1,
-		maxSlides: 3,
-		slideMargin: 20
+	$('.project-list').slidesjs({
+		width: 1098,
+		height: 622,
+		play: {
+			interval: 5000
+		}
+		// slideWidth: 346,
+		// minSlides: 1,
+		// maxSlides: 3,
+		// slideMargin: 20
 	});
 
 	$('.service').each(function(i) {
@@ -46,7 +51,7 @@ $(window).load(function(){
 		$('html, body').animate({
 			scrollTop: windowHeight
 		}, 1000, function() {
-			parallax(); // Callback is required for iOS
+			parallax();
 		});
 		return false;
 	});
@@ -55,7 +60,7 @@ $(window).load(function(){
 		$('html, body').animate({
 			scrollTop: windowHeight * 2
 		}, 1000, function() {
-			parallax(); // Callback is required for iOS
+			parallax();
 		});
 		return false;
 	});
@@ -64,7 +69,7 @@ $(window).load(function(){
 		$('html, body').animate({
 			scrollTop: windowHeight * 3
 		}, 1000, function() {
-			parallax(); // Callback is required for iOS
+			parallax();
 		});
 		return false;
 	});
@@ -73,7 +78,7 @@ $(window).load(function(){
 		$('html, body').animate({
 			scrollTop: (windowHeight * 4)
 		}, 1000, function() {
-			parallax(); // Callback is required for iOS
+			parallax();
 		});
 		return false;
 	});
@@ -94,8 +99,13 @@ $(window).load(function(){
 
 		$(layers).each(function(i) {
 			var scaleValue = 0;
-			if (layers[i].contentHeight > windowHeight) {
-				scaleValue = windowHeight / layers[i].contentHeight;
+			if (layers[i].contentHeight > windowHeight - HEADER_HEIGHT) {
+				if ((i == 0) && (layers[i].contentHeight > windowHeight)){
+					scaleValue = windowHeight / layers[i].contentHeight;
+				}
+				else{
+					scaleValue = (windowHeight - HEADER_HEIGHT) / layers[i].contentHeight;
+				}
 
 				layers[i].element.find('.layer__content').css({
 					"-webkit-transform": "scale(" + scaleValue +")",
@@ -110,9 +120,9 @@ $(window).load(function(){
 			layers[i].element.find('.layer__wrap').height(windowHeight);
 		});
 
-		$('.out').height(windowHeight * 5);
+		
 		layers[2].element.find('.wrap').height(windowHeight - HEADER_HEIGHT);
-
+		$('.out').height(windowHeight * 5);
 		$('.fpoint_0').html(windowHeight);
 		$('.fpoint_1').html(windowHeight * 2);
 		$('.fpoint_2').html(windowHeight * 3);
@@ -141,7 +151,7 @@ $(window).load(function(){
 			$('.js-nav-link').removeClass('is-active');
 			$('#js-nav-portfolio').addClass('is-active');
 			layers[0].element.css('height', windowHeight - scrolled + 'px');
-			layers[1].element.css('height', windowHeight + 'px');
+			layers[1].element.css('height', windowHeight - HEADER_HEIGHT + 'px');
 			layerService.css('height', '0px'); // next
 		}
 		else if (scrolled > windowHeight && scrolled <= windowHeight * 2) {
@@ -155,7 +165,7 @@ $(window).load(function(){
 				$('#js-nav-portfolio').addClass('is-active');
 			}
 			layers[0].element.css('height', '0px'); // prev
-			layers[1].element.css('height', windowHeight + 'px');
+			layers[1].element.css('height', windowHeight - HEADER_HEIGHT+ 'px');
 			layers[2].element.css('height', windowHeight - HEADER_HEIGHT + 'px');
 			layerService.css('height', scrolled - windowHeight - HEADER_HEIGHT +'px').removeClass('service_bottom');
 			layers[3].element.css('height', '0px'); // next

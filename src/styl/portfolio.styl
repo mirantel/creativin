@@ -3,93 +3,112 @@
 		background $yellow
 		z-index 30
 		.layer__inner
-			padding 99px 70px 18px
+			padding 20px 0
+			height 100%
+			box-sizing border-box
+			position relative
+		.layer__content
+			position relative
 
 .project-list
 	_clearfix()
-	list-style none
 	line-height 1.4
-	height 620px
+	width 1098px
+	margin 0 auto
+	padding-bottom 10px
 	overflow hidden
+	&__slide
+		height 100%
 
 .bx-wrapper
 	margin 0 auto
 	position relative
 
-.bx-pager
-	margin 7px 0 0
+.slidesjs-pagination
+	margin 10px 0 0
 	text-align center
 	font 0/0 a
 	line-height 0
 	color transparent
-
-.bx-pager-item
-	display inline-block
-	height 9px
-	width 9px
-	border-radius 50%
-	margin 0 4px
 	position relative
-	&:before
-		position absolute
-		top 34%
-		left 48%
-		width 100%
-		height 100%
-		border-radius 0 0 0 75%
-		background linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)
-		content ""
-		transform rotate(-45deg)
+	z-index 15
+	&-item
+		display inline-block
+		height 9px
+		width 9px
+		border-radius 50%
+		margin 0 4px
+		position relative
+		a
+			box-shadow 0 0 0 1px #fff inset
+			display block
+			border-radius 50%
+			height 100%
+			position relative
+			background $yellow
+			&.active
+				background #fff
+				box-shadow 0 0 0 1px #fff inset, 0 0 0 1px #fff
+		&:before
+			position absolute
+			top 34%
+			left 48%
+			width 100%
+			height 100%
+			border-radius 0 0 0 75%
+			background linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%)
+			content ""
+			transform rotate(-45deg)
 
-.bx-pager-link
-	box-shadow 0 0 0 1px #fff inset
-	display block
-	border-radius 50%
-	height 100%
-	position relative
-	background $yellow
-	&.active
-		background #fff
-		box-shadow 0 0 0 1px #fff inset, 0 0 0 1px #fff
-
-.bx-prev,
-.bx-next
+.slidesjs-previous,
+.slidesjs-next
 	height 35px
 	width 35px
 	font 0/0 a
 	color transparent
 	border 1px solid #fef3d1
-	top 293px
+	top 50%
+	margin-top -15px
 	position absolute
 	background linear-gradient(rgba(241, 172, 1,1) 0%, rgba(241, 172, 1,.0) 100%)
 
-.bx-prev
-	left -60px
+.slidesjs-previous
+	margin-left -600px
+	left 50%
 	border-width 1px 0 0 1px
 	transform rotate(-45deg)
 
-.bx-next
-	right -60px
+.slidesjs-next
+	margin-right -600px
+	right 50%
 	border-width 1px 1px 0 0
 	transform rotate(45deg)
 
 .project
-	margin 10px 0
+	margin 10px
 	width 346px
+	height 291px
 	float left
 	position relative
 	text-decoration none
 	display block
+	background #f2f2f2
 	&:after
 		position absolute
-		top 100%
+		bottom -8px
 		height 8px
-		width 342px
+		width 100%
 		background-image embedurl("../date-img/project-shadow.png")
 		left 2px
 		content ""
+		background-size cover
+		background-repeat no-repeat
+		background-position 50% 0
 	&__img
+		height 100%
+		overflow hidden
 		img
+			width 100%
 			vertical-align top
 	&__info
 		box-shadow 0 -1px 0 #f2f2f2
@@ -100,6 +119,10 @@
 		padding 12px 20px 0
 		box-sizing border-box
 		height 77px
+		position absolute
+		bottom 0
+		left 0
+		right 0
 		p
 			margin 0
 	&__title
@@ -118,3 +141,34 @@
 			box-shadow 0 -1px 0 #08233e
 		.project__info, .project__title
 			color #fff
+
+@media (max-height: 748px)
+	.project
+		margin 0.9115%
+		height 45%
+	.project-list
+		height 100%
+		padding 0
+	.slidesjs-control,
+	.slidesjs-container
+		height 100% !important
+	.slidesjs-pagination
+		left 0
+		right 0
+		bottom 2.9115%
+		position absolute
+
+@media (max-width: 1248px)
+	.slidesjs-previous
+		margin-left 0
+		left 18px
+	.slidesjs-next
+		margin-right 0
+		right 18px
+@media (max-width: 1180px)
+	.project
+		width 31.51%
+	.project-list
+		width 100%
+		box-sizing border-box
+		padding 0 40px
