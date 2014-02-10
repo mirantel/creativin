@@ -512,7 +512,6 @@ ol {
 
 .layer_portfolio .layer__inner {
   padding: 20px 0;
-  height: 100%;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
@@ -601,7 +600,7 @@ ol {
   color: transparent;
   border: 1px solid #fef3d1;
   top: 50%;
-  margin-top: -15px;
+  margin-top: -32px;
   position: absolute;
   background: -webkit-linear-gradient(#f1ac01 0%, rgba(241,172,1,0) 100%);
   background: linear-gradient(#f1ac01 0%, rgba(241,172,1,0) 100%);
@@ -655,7 +654,7 @@ ol {
 }
 
 .project__img img {
-  width: 100%;
+  min-width: 100%;
   vertical-align: top;
 }
 
@@ -707,6 +706,10 @@ ol {
 }
 
 @media (max-height: 748px) {
+  .layer__inner {
+    height: 100%;
+  }
+
   .project {
     margin: 0.9115%;
     height: 45%;
@@ -730,7 +733,33 @@ ol {
   }
 }
 
+@media (min-height: 748px) {
+  .slidesjs-previous,
+  .slidesjs-next {
+    margin-top: 0;
+    top: 308px;
+  }
+}
+
 @media (max-width: 1248px) {
+  .layer__inner {
+    height: 100%;
+  }
+
+  .project-list {
+    height: 100%;
+    padding: 0;
+  }
+
+  .project {
+    margin: 0.9115%;
+  }
+
+  .slidesjs-control,
+  .slidesjs-container {
+    height: 100% !important;
+  }
+
   .slidesjs-previous {
     margin-left: 0;
     left: 18px;

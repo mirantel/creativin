@@ -4,7 +4,7 @@
 		z-index 30
 		.layer__inner
 			padding 20px 0
-			height 100%
+			
 			box-sizing border-box
 			position relative
 		.layer__content
@@ -68,7 +68,7 @@
 	color transparent
 	border 1px solid #fef3d1
 	top 50%
-	margin-top -15px
+	margin-top -32px
 	position absolute
 	background linear-gradient(rgba(241, 172, 1,1) 0%, rgba(241, 172, 1,.0) 100%)
 
@@ -108,7 +108,7 @@
 		height 100%
 		overflow hidden
 		img
-			width 100%
+			min-width 100%
 			vertical-align top
 	&__info
 		box-shadow 0 -1px 0 #f2f2f2
@@ -143,6 +143,8 @@
 			color #fff
 
 @media (max-height: 748px)
+	.layer__inner
+		height 100%
 	.project
 		margin 0.9115%
 		height 45%
@@ -158,7 +160,22 @@
 		bottom 2.9115%
 		position absolute
 
+@media (min-height: 748px)
+	.slidesjs-previous,
+	.slidesjs-next
+		margin-top 0
+		top 308px
 @media (max-width: 1248px)
+	.layer__inner
+		height 100%
+	.project-list
+		height 100%
+		padding 0
+	.project
+		margin 0.9115%
+	.slidesjs-control,
+	.slidesjs-container
+		height 100% !important
 	.slidesjs-previous
 		margin-left 0
 		left 18px
